@@ -5,11 +5,11 @@ import CustomButton from "../CustomButton/CustomButton";
 import logoimg from "../../assets-2/tastelogo.jpeg";
 
 import MenuIcon from "@mui/icons-material/Menu";
-import FeaturedPlayListIcon from "@mui/icons-material/FeaturedPlaylist";
+import FeaturedPlayListIcon from "@mui/icons-material/FeaturedPlayList";
 import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
 import HomeIcon from "@mui/icons-material/Home";
 import ContactsIcon from "@mui/icons-material/Contacts";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import {
   Drawer,
@@ -20,9 +20,8 @@ import {
   ListItem,
 } from "@mui/material";
 
-
 function Header() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [mobileMenu, setMobileMenu] = useState({ left: false });
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -34,7 +33,6 @@ function Header() {
     }
 
     setMobileMenu({ ...mobileMenu, [anchor]: open });
-    
   };
 
   const list = (anchor) => (
@@ -48,7 +46,11 @@ function Header() {
     >
       <List>
         {nav_titles.map((item, index) => (
-          <ListItem key={index} disablePadding onClick={()=>navigate(item.path)}>
+          <ListItem
+            key={index}
+            disablePadding
+            onClick={() => navigate(item.path)}
+          >
             <ListItemButton>
               <ListItemIcon>
                 {index === 0 && <HomeIcon />}
@@ -63,8 +65,6 @@ function Header() {
       </List>
     </Box>
   );
-
-  
 
   const nav_titles = [
     {
@@ -107,7 +107,7 @@ function Header() {
 
   const NavBarLogo = styled("img")(({ theme }) => ({
     cursor: "pointer",
-    width: 70, 
+    width: 70,
     [theme.breakpoints.down("md")]: {
       display: "none",
     },
@@ -157,13 +157,18 @@ function Header() {
             {list("left")}
           </Drawer>
 
-          <NavBarLogo src={logoimg}
-             style={{ width: "150px", height: "auto" }}
-           />
+          <NavBarLogo
+            src={logoimg}
+            style={{ width: "150px", height: "auto" }}
+          />
         </Box>
         <NavBarLinkBox>
           {nav_titles.map((item, index) => (
-            <NavBarLink variant="body2" key={index} onClick={()=>navigate(item.path)}>
+            <NavBarLink
+              variant="body2"
+              key={index}
+              onClick={() => navigate(item.path)}
+            >
               {item.display}
             </NavBarLink>
           ))}
