@@ -1,7 +1,7 @@
 import React from "react";
 import { styled, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
-import deliveryImg from "../../assets-2/deliveryImg.png";
+import deliveryImg from "../../assets-2/DeliveryImg.png";
 import CustomButton from "../../Components/CustomButton/CustomButton";
 
 const Delivery = () => {
